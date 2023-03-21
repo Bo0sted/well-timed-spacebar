@@ -9,15 +9,9 @@ int main()
 {
     std::cout << "I like men!\n";
 
-<<<<<<< HEAD
     std::cout << "Which res are you using? \n(1) 1080\n(2) 1440\nInput -> ";
     int input{};
     std::cin >> input;
-
-
-
-    
-=======
 
     //1920x1080
     //Vector3 CIRCLE_OFFSET = new Vec3(895, 473, 0);
@@ -27,5 +21,5 @@ int main()
 
     //1440p
     //Fuq you you can get your own values
->>>>>>> ccfe6f475610037cfe7f8674d46795e6863c03de
+
 }
