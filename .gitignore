@@ -1,14 +1,5 @@
 *.vs
-*.tlog
-*.lastbuildstate
-*.log
-*.recipe
-*.ilk
-*.txt
 *.filters
 *.vcxproj
 *.user
-*.pdb
-*.idb
-*.obj
 /x64
