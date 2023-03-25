@@ -11,4 +11,4 @@
 *.pdb
 *.idb
 *.obj
-/build
+/x64
