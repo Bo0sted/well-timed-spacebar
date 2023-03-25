@@ -45,11 +45,13 @@ cv::Mat getMat(HWND hWND) {
     DeleteObject(bitmap);
     DeleteDC(memoryDeviceContext);
     ReleaseDC(hWND, deviceContext);
+
+    return mat;
 }
 
 int main()
 {
-    LPCWSTR windowTitle = L"DeadByDaylight-Win64-Shipping";
+    LPCWSTR windowTitle = L"DeadByDaylight  ";
     HWND hWND = FindWindow(NULL, windowTitle);
     while (!hWND) {
         std::system("cls");
