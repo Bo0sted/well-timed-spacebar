@@ -35,6 +35,16 @@ cv::Mat getMat(HWND hWND) {
     bi.biSizeImage = 0;
     bi.biXPelsPerMeter = 1;
     bi.biYPelsPerMeter = 2;
+    bi.biClrUsed = 3;
+    bi.biClrImportant = 4;
+
+    cv::Mat mat = cv::Mat(height, width, CV_8UC4);
+
+    GetDIBits(memoryDeviceContext, bitmap, 0, height, mat.data, (BITMAPINFO*)&bi, DIB_RGB_COLORS);
+
+    DeleteObject(bitmap);
+    DeleteDC(memoryDeviceContext);
+    ReleaseDC(hWND, deviceContext);
 }
 
 int main()
