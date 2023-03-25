@@ -26,7 +26,7 @@ cv::Mat getMat(HWND hWND) {
     BitBlt(memoryDeviceContext, 0, 0, width, height, deviceContext, 0, 0, SRCCOPY);
 
     BITMAPINFOHEADER bi;
-    bi.biSize = sizeof(BITMAP);
+    bi.biSize = sizeof(BITMAPINFOHEADER);
     bi.biWidth = width;
     bi.biHeight = -height;
     bi.biPlanes = 1;
@@ -53,14 +53,36 @@ int main()
 {
     LPCWSTR windowTitle = L"DeadByDaylight  ";
     HWND hWND = FindWindow(NULL, windowTitle);
+    bool init = false;
     while (!hWND) {
-        std::system("cls");
-        std::cout << "Start the game...\n";
+        if (!init) {
+            std::cout << "Start the game";
+        }
+        std::cout << ".";
         hWND = FindWindow(NULL, windowTitle);
         Sleep(1000);
     }
 
-    std::cout << "Found window.\n";
+    std::cout << "\nFound window\n";
+    cv::Mat background;
+    cv::namedWindow("output", cv::WINDOW_NORMAL);
+
+    /*cv::Mat img = getMat(hWND);
+    bool check = cv::imwrite("test.jpg", img);
+    if (!check) {
+        std::cout << "Failed to save.\n";
+    }
+    else {
+        std::cout << "Successfully saved image!\n";
+    }*/
+
+    while (true) {
+        cv::Mat img = getMat(hWND);
+        img.copyTo(background);
+
+        cv::imshow("output", background);
+        cv::waitKey(33);
+    }
 
     //1920x1080
     //Vector3 CIRCLE_OFFSET = new Vec3(895, 473, 0);
@@ -71,6 +93,5 @@ int main()
     //1440p
     //Fuq you you can get your own values
 
-    free(hWND);
     return 0;
 }
