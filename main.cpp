@@ -57,7 +57,7 @@ int main()
         std::system("cls");
         std::cout << "Start the game...\n";
         hWND = FindWindow(NULL, windowTitle);
-        Sleep(100);
+        Sleep(1000);
     }
 
     std::cout << "Found window.\n";
