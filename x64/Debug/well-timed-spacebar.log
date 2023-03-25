@@ -1,0 +1,12 @@
+﻿  bitmap.cpp
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(181,64): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(185,36): warning C4267: '=': conversion from 'size_t' to 'int32_t', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(186,34): warning C4267: '=': conversion from 'size_t' to 'int32_t', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(199,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(235,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(235,34): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(242,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+W:\Stuff\Programming\DBDBot\well-timed-spacebar\bitmap.cpp(242,36): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+  main.cpp
+  Generating Code...
+  well-timed-spacebar.vcxproj -> W:\Stuff\Programming\DBDBot\well-timed-spacebar\x64\Debug\well-timed-spacebar.exe

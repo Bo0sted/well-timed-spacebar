@@ -3,15 +3,52 @@
 
 #include <iostream>
 #include <Windows.h>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 
+
+
+cv::Mat getMat(HWND hWND) {
+    HDC deviceContext = GetDC(hWND);
+    HDC memoryDeviceContext = CreateCompatibleDC(deviceContext);
+
+    RECT windowRect; //Window rectangle, to be changed later according to resolution because we don't need to capture the whole screen (save processing time)
+    GetClientRect(hWND, &windowRect);
+
+    int height = windowRect.bottom;
+    int width = windowRect.right;
+
+    HBITMAP bitmap = CreateCompatibleBitmap(deviceContext, width, height);
+
+    SelectObject(memoryDeviceContext, bitmap);
+
+    //Copy data into bitmap
+    BitBlt(memoryDeviceContext, 0, 0, width, height, deviceContext, 0, 0, SRCCOPY);
+
+    BITMAPINFOHEADER bi;
+    bi.biSize = sizeof(BITMAP);
+    bi.biWidth = width;
+    bi.biHeight = -height;
+    bi.biPlanes = 1;
+    bi.biBitCount = 32;
+    bi.biCompression = BI_RGB;
+    bi.biSizeImage = 0;
+    bi.biXPelsPerMeter = 1;
+    bi.biYPelsPerMeter = 2;
+}
 
 int main()
 {
-    std::cout << "I like men!\n";
+    LPCWSTR windowTitle = L"DeadByDaylight-Win64-Shipping";
+    HWND hWND = FindWindow(NULL, windowTitle);
+    while (!hWND) {
+        std::system("cls");
+        std::cout << "Start the game...\n";
+        hWND = FindWindow(NULL, windowTitle);
+        Sleep(100);
+    }
 
-    std::cout << "Which res are you using? \n(1) 1080\n(2) 1440\nInput -> ";
-    int input{};
-    std::cin >> input;
+
 
     //1920x1080
     //Vector3 CIRCLE_OFFSET = new Vec3(895, 473, 0);
@@ -22,4 +59,5 @@ int main()
     //1440p
     //Fuq you you can get your own values
 
+    return 0;
 }
