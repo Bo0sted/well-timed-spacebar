@@ -5,9 +5,9 @@
 *.recipe
 *.ilk
 *.txt
-*.fitters
 *.filters
 *.vcxproj
+*.user
 *.pdb
 *.idb
 *.obj
