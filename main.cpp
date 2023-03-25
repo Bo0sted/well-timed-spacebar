@@ -60,7 +60,7 @@ int main()
         Sleep(100);
     }
 
-
+    std::cout << "Found window.\n";
 
     //1920x1080
     //Vector3 CIRCLE_OFFSET = new Vec3(895, 473, 0);
@@ -71,5 +71,6 @@ int main()
     //1440p
     //Fuq you you can get your own values
 
+    free(hWND);
     return 0;
 }
