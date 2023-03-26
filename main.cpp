@@ -111,7 +111,11 @@ int main()
     //SKILL_CHECK_RECT = new Rectangle(234, 140, 1500, 700);
 
     //1440p
+
     //Fuq you you can get your own values
+    //Vector3 CIRCLE_OFFSET = new Vec3(1194, 635, 0);
+    //CIRCLE_DIAMETER = 164;
     cv::destroyWindow("output");
+
     return 0;
 }
