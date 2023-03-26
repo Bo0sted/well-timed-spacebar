@@ -7,7 +7,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-
+const double THRESHOLD = 0.9; //threshold for "is this the skill check window?"
 
 cv::Mat getMat(HWND hWND) {
     HDC deviceContext = GetDC(hWND);
@@ -77,7 +77,6 @@ int main()
     std::string filePath = cv::samples::findFile("findMe.jpg"); //"Needle" to find in the window
     cv::Mat needle = cv::imread(filePath, cv::IMREAD_UNCHANGED);
     cv::cvtColor(needle, needle, cv::COLOR_BGR2GRAY); //marchTemplate requires grayscale so we convert to gray
-    const double THRESHOLD = 0.9; //threshold for "is this the skill check window?"
     while (true) {
         cv::Mat img = getMat(hWND); //Get the window
         cv::Mat copyofimg; //Make a copy to keep for later
